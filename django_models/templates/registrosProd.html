@@ -1,0 +1,40 @@
+{% extends 'about.html' %}
+
+<main>
+    {% block content %}
+    <div class="container mt-5">
+        <table class="table table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">ID PRODUCTO</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">PRECIO</th>
+                    <th scope="col">DISPONIBILIDAD</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for i in data %}
+                <tr class="">
+                    <td scope="row">{{i.id}}</td>
+                    <td>{{i.nombre}}</td>
+                    <td>{{i.precio}}</td>
+
+                    {% if i.disponibilidad %}
+                    <td>Disponible</td>
+                    {% else %}
+                    <td>No disponible</td>
+                    {% endif %}
+
+                    <td>
+                        <a class="btn btn-primary" type="button"><i class="bi bi-pencil-square"></i></a>
+                        <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock content %}
+</main>

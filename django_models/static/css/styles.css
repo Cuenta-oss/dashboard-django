@@ -1,0 +1,28 @@
+/* .container_styles{
+} */
+.col-left {
+    height: 90vh;
+    background-color: rgb(63, 62, 61);
+
+}
+a{
+    text-decoration: none;
+    
+}
+
+.tag__item {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 248, 248, 0.445);
+    font-weight: bold;
+    transition: .5s;
+}
+
+.tag__item:hover {
+    background-color: rgb(124, 123, 122);
+    transition: .5s;
+    cursor: pointer;
+}
