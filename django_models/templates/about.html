@@ -32,28 +32,30 @@
                 <div class="col-2">
                     <div class="col-left">
                         <a href="{% url 'list_productos' %}">
-                            <li class="tag__item">Registros</li>
+                            <li class="tag__item">PRODUCTOS</li>
                         </a>
 
                         <a href="{% url 'add_products' %}">
-                            <li class="tag__item">Añadir registro</li>
+                            <li class="tag__item">AÑADIR PRODUCTO</li>
                         </a>
-                        <a href="/admin/">
-                            <li class="tag__item">Admin</li>
+                        <a href="/admin/" target="_blank">
+                            <li class="tag__item">ADMIN</li>
                         </a>
                         <a href="">
-                            <li class="tag__item">About</li>
+                            <li class="tag__item">NOSOTROS</li>
                         </a>
                         <a href="#">
-                            <li class="tag__item">Cerrar sesión</li>
+                            <li class="tag__item">LOGOUT</li>
                         </a>
                     </div>
                 </div>
                 <div class="col-10">
                     <div class="col-rigth">
+
                         {% block content %}
                         <h1>Hola</h1>
                         {% endblock content %}
+
                     </div>
                 </div>
             </div>
@@ -70,6 +72,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: '{{message}}',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    </script>
+    {% endfor %}
+    {% endif %}
+    <script src="{% static 'js/main.js' %}" ></script>
+    {% block js %}
+        
+    {% endblock js %}
+        
 </body>
 
 </html>

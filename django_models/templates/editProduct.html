@@ -1,0 +1,21 @@
+{% extends 'about.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="card col-12 col-md-4 offset-md-4 mt-4">
+            <div class="card-body">
+                {{ form | crispy }}
+                {{error}}
+                <div class="d-flex justify-content-end">
+                    <a href="/list_productos/" type="submit" class="btn btn-dark">CANCELAR</a>
+                    &nbsp;    
+                    <button type="submit" class="btn btn-success">GUARDAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content %}
